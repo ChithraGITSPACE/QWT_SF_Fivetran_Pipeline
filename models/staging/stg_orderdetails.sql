@@ -16,6 +16,6 @@ on a.order_id=b.order_id
 
 {% if is_incremental() %}
 
-where order_date > (select max(orderdate) from {{this}} )
+where orderdate > (select max(orderdate) from {{this}} )
 
 {% endif %}
