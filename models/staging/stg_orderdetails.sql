@@ -7,7 +7,8 @@ a.PRODUCT_ID as productid,
 a.QUANTITY,
 a.UNIT_PRICE as unitprice,
 a.DISCOUNT,
-b.order_date from 
+b.order_date as orderdate
+from 
 {{source('QWT_RAW','orderdetails')}} a
 inner join {{source('QWT_RAW','orders')}} b
 on a.order_id=b.order_id
